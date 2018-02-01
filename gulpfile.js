@@ -18,8 +18,8 @@ gulp.task('html', () => {
     .pipe(gulp.dest('./dist/'))
 })
 
-// styles
-gulp.task('styles', () => {
+// scss
+gulp.task('scss', () => {
   return gulp.src('./src/styles/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS())
@@ -27,12 +27,19 @@ gulp.task('styles', () => {
     .pipe(browserSync.stream())
 })
 
+// css
+gulp.task('css', () => {
+  return gulp.src('./src/styles/css/*.css')
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('./dist/styles/'))
+})
+
 // watchers
 gulp.task('watch', () => {
-  gulp.watch('./src/styles/**/*.scss', ['styles'])
+  gulp.watch('./src/styles/**/*.scss', ['scss'])
   gulp.watch('./src/*.html', ['html'])
   gulp.watch('./src/*.html').on('change', browserSync.reload)
 })
 
 // chain tasks
-gulp.task('default', ['html', 'styles', 'watch', 'serve'])
+gulp.task('default', ['html', 'css', 'scss', 'watch', 'serve'])
