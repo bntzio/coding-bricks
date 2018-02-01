@@ -1,0 +1,9 @@
+{
+  "name": "coding-bricks",
+  "version": "0.1.0",
+  "description": "Learn to code by building 30 apps in 10 different programming languages",
+  "main": "index.js",
+  "repository": "git@github.com:bntzio/coding-bricks-course.git",
+  "author": "Enrique Benitez <hello@bntz.io>",
+  "license": "UNLICENSED"
+}
