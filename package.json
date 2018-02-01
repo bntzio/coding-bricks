@@ -1,9 +1,19 @@
 {
-  "name": "coding-bricks",
+  "name": "coding-bricks-course",
   "version": "0.1.0",
   "description": "Learn to code by building 30 apps in 10 different programming languages",
   "main": "index.js",
   "repository": "git@github.com:bntzio/coding-bricks-course.git",
   "author": "Enrique Benitez <hello@bntz.io>",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-sass": "^3.1.0",
+    "standard": "^10.0.3"
+  }
 }
