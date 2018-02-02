@@ -6,6 +6,7 @@ const browserSync = require('browser-sync').create()
 // server
 gulp.task('serve', () => {
   browserSync.init({
+    open: false,
     server: {
       baseDir: './dist/'
     }
@@ -34,6 +35,12 @@ gulp.task('css', () => {
     .pipe(gulp.dest('./dist/styles/'))
 })
 
+// fonts
+gulp.task('fonts', () => {
+  return gulp.src('./src/fonts/*')
+    .pipe(gulp.dest('./dist/fonts/'))
+})
+
 // watchers
 gulp.task('watch', () => {
   gulp.watch('./src/styles/**/*.scss', ['scss'])
@@ -42,4 +49,4 @@ gulp.task('watch', () => {
 })
 
 // chain tasks
-gulp.task('default', ['html', 'css', 'scss', 'watch', 'serve'])
+gulp.task('default', ['html', 'css', 'scss', 'fonts', 'watch', 'serve'])

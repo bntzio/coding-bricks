@@ -1,5 +1,28 @@
+@font-face {
+  font-family: 'SuperMario';
+  src: url('../fonts/supermario256.ttf') format('truetype'); /* Safari, Android, iOS */
+  src: url('../fonts/supermario256.woff2') format('woff2'); /* Super Modern Browsers */
+  src: url('../fonts/supermario256.woff') format('woff'); /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: 'System';
+  src: url('../fonts/vgasys.ttf') format('truetype'); /* Safari, Android, iOS */
+  src: url('../fonts/vgasys.woff2') format('woff2'); /* Super Modern Browsers */
+  src: url('../fonts/vgasys.woff') format('woff'); /* Pretty Modern Browsers */
+}
+
 body {
-  background: $primaryColor;
-  color: $secondaryColor;
   font-size: $fontSize;
+  background-color: $primaryColor;
+  background: linear-gradient(to bottom, $primaryColor 60%, darken($primaryColor, 7%));
+  height: 100vh;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+#main {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
 }
