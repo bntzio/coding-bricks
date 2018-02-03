@@ -14,8 +14,7 @@
 body {
   font-size: $fontSize;
   background-color: $primaryColor;
-  background: linear-gradient(to bottom, $primaryColor 60%, darken($primaryColor, 7%));
-  height: 100vh;
+  height: 100%;
   color: white;
   font-family: 'Roboto', sans-serif;
 }

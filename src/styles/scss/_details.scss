@@ -1,0 +1,52 @@
+.details {
+  display: grid;
+  grid-column: 1 / -1;
+  background: darken($primaryColor, 7%);
+
+  &__wrapper {
+    opacity: 0;
+    transition: all .8s ease-in;
+  }
+
+  &__title {
+    font-family: 'SuperMario', 'System', 'Roboto', 'sans-serif';
+    font-size: 1.3rem;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      font-size: 1.7rem;
+      padding: 0 2rem;
+    }
+    @include desktop {
+      font-size: 2rem;
+    }
+  }
+
+  &__overview {
+    color: darken($primaryColor, 7%);
+    background: white;
+    margin: 0 5%;
+    padding: 2rem 2.5rem;
+    border-radius: 4px;
+    @include tablet {
+      margin: 0 10%;
+      padding: 2rem 3rem;
+    }
+    @include desktop {
+      margin: 0 15%;
+      padding: 2.5rem 3.5rem;
+    }
+
+    p {
+      line-height: 2.2rem;
+      font-size: 1rem;
+      @include tablet {
+        font-size: 1.1rem;
+      }
+      @include desktop {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

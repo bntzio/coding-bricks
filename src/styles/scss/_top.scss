@@ -2,6 +2,11 @@
   display: grid;
   grid-column: 1 / -1;
   align-self: center;
+  background: linear-gradient(to bottom, $primaryColor 60%, darken($primaryColor, 7%));
+
+  &__wrapper {
+    transition: all .8s ease-out;
+  }
 
   &__title {
     font-family: 'SuperMario', 'System', 'Roboto', 'sans-serif';
@@ -151,9 +156,6 @@
           color: white;
           background: $secondaryColor;
           transition: .6s ease all;
-          button {
-            content: 'a';
-          }
         }
       }
     }

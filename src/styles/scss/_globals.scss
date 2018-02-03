@@ -1,0 +1,11 @@
+.fade-out {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(-60px);
+}
+.zoom-pulse {
+  animation: zoom-pulse 1.4s;
+}

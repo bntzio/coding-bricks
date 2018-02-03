@@ -1,5 +1,7 @@
 const $ = require('jquery')
 const { TimelineMax, TweenMax } = require('gsap')
+const ScrollMagic = require('ScrollMagic')
+require('debug.addIndicators')
 
 $(document).ready(() => {
   /* gsap */
@@ -27,4 +29,18 @@ $(document).ready(() => {
   $('#enroll').mouseleave(function () {
     $(this).text('Enroll')
   })
+  /* scrollmagic */
+  const controller = new ScrollMagic.Controller({ addIndicators: false })
+
+  new ScrollMagic.Scene({
+    triggerElement: '.intro-scroll'
+  })
+  .setClassToggle('.top__wrapper', 'fade-out')
+  .addTo(controller)
+
+  new ScrollMagic.Scene({
+    triggerElement: '.intro-scroll'
+  })
+  .setClassToggle('.details__wrapper', 'fade-in')
+  .addTo(controller)
 })
