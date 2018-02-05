@@ -30,7 +30,7 @@ $(document).ready(() => {
     $(this).text('Enroll')
   })
   /* scrollmagic */
-  const controller = new ScrollMagic.Controller({ addIndicators: false })
+  const controller = new ScrollMagic.Controller({ addIndicators: true })
 
   new ScrollMagic.Scene({
     triggerElement: '.intro-scroll'
@@ -42,5 +42,13 @@ $(document).ready(() => {
     triggerElement: '.intro-scroll'
   })
   .setClassToggle('.details__wrapper', 'fade-in')
+  .addTo(controller)
+
+  new ScrollMagic.Scene({
+    triggerElement: '.outline',
+    triggerHook: 0,
+    duration: '100%'
+  })
+  .setPin('.outline__wrapper', { pushFollowers: false })
   .addTo(controller)
 })

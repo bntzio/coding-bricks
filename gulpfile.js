@@ -1,4 +1,5 @@
 const gulp = require('gulp')
+const svgo = require('gulp-svgo')
 const sass = require('gulp-sass')
 const cleanCSS = require('gulp-clean-css')
 const browserSync = require('browser-sync').create()
@@ -41,6 +42,13 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest('./dist/fonts/'))
 })
 
+// images
+gulp.task('images', () => {
+  return gulp.src('./src/images/**/*')
+    .pipe(svgo())
+    .pipe(gulp.dest('./dist/images'))
+})
+
 // watchers
 gulp.task('watch', () => {
   gulp.watch('./src/styles/**/*.scss', ['scss'])
@@ -49,4 +57,4 @@ gulp.task('watch', () => {
 })
 
 // chain tasks
-gulp.task('default', ['html', 'css', 'scss', 'fonts', 'watch', 'serve'])
+gulp.task('default', ['html', 'css', 'scss', 'fonts', 'images', 'watch', 'serve'])
