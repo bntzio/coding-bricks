@@ -22,6 +22,7 @@
   }
 
   &__notebook {
+    position: relative;
     margin-top: 2rem;
     padding: 2rem 15%;
     background-color: white;
@@ -31,8 +32,42 @@
     margin-bottom: 13rem;
     border-radius: 4px;
 
-    p {
-      font-size: 1.2rem;
+    &__prev, &__next {
+      position: absolute;
+      top: 38%;
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+    &__prev {
+      left: 16px;
+      background-image: url('./../images/icons/chevron-left.svg');
+      background-position-x: -1px;
+    }
+    &__next {
+      right: 16px;
+      background-image: url('./../images/icons/chevron-right.svg');
+      background-position-x: 1px;
+    }
+
+    &__card {
+      h3 {
+        span {
+          margin-left: -1rem;
+          font-size: 1.6rem;
+          color: $secondaryColor;
+        }
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+      }
     }
   }
 }
