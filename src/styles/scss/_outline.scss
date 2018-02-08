@@ -34,12 +34,22 @@
 
     &__prev, &__next {
       position: absolute;
-      top: 38%;
-      width: 40px;
-      height: 40px;
+      top: 40%;
+      width: 26px;
+      height: 26px;
       background-size: contain;
       background-repeat: no-repeat;
       cursor: pointer;
+      @include tablet {
+        top: 39%;
+        width: 33px;
+        height: 33px;
+      }
+      @include desktop {
+        top: 38%;
+        width: 40px;
+        height: 40px;
+      }
     }
     &__prev {
       left: 16px;
@@ -54,19 +64,40 @@
 
     &__card {
       h3 {
+        text-align: center;
         span {
           margin-left: -1rem;
-          font-size: 1.6rem;
+          font-size: .9rem;
           color: $secondaryColor;
+          @include tablet {
+            font-size: 1.3rem;
+          }
+          @include desktop {
+            font-size: 1.6rem;
+          }
         }
-        font-size: 2rem;
+        font-size: 1.1rem;
         font-weight: 500;
         margin-bottom: 1rem;
+        @include tablet {
+          font-size: 1.4rem;
+        }
+        @include desktop {
+          font-size: 2rem;
+        }
       }
 
       p {
-        font-size: 1.2rem;
-        line-height: 1.8rem;
+        font-size: .9rem;
+        line-height: 1.3rem;
+        @include tablet {
+          font-size: 1.1rem;
+          line-height: 1.4rem;
+        }
+        @include desktop {
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+        }
       }
     }
   }

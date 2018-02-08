@@ -11,6 +11,13 @@
   src: url('../fonts/vgasys.woff') format('woff'); /* Pretty Modern Browsers */
 }
 
+html {
+  /* Prevent font scaling in landscape while allowing user zoom */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
 body {
   font-size: $fontSize;
   background-color: $primaryColor;
@@ -24,4 +31,8 @@ body {
   text-align: center;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: auto;
+}
+
+#warning-message {
+  display: none;
 }

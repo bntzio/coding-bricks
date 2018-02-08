@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Coding Bricks - Learn to Code by Building 30 Apps</title>
   <link rel="stylesheet" href="/styles/minireset.css" />
@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 </head>
 <body>
+  <div id="warning-message">
+    <p>This website is only viewable in portrait mode! 😢</p>
+  </div>
   <div id="main">
     <div class="top">
       <div class="top__wrapper">
@@ -35,7 +38,7 @@
         <div class="top__form">
           <form>
             <input type="email" placeholder="mark@zuckerberg.com" required />
-            <button id="enroll">Enroll</button>
+            <button id="enroll" disabled>Enroll</button>
           </form>
           <p class="top__form__notice intro-scroll">FREE for the next 1,247 persons! 🙌</p>
           <br />
@@ -56,20 +59,19 @@
       <div class="details__wrapper">
         <h4 class="details__title">CODING BRICKS IN DETAIL 🔎</h4>
         <div class="details__overview">
-          <p>I know what you're thinking... Whaaat?! 10 programming languages in one course? 30 apps?</p>
-          <p>Yep, you're right, 10 programming languages, 30 apps.</p>
+          <p><b>I know what you're thinking...🔮</b><br />Whaaat?! 10 programming languages and 30 apps in one course?<br />Yep, you're right, 10 programming languages, 30 apps.</p>
           <br />
           <p>The focus of this course is to teach you how to code, not how to master a language.</p>
-          <p>Instead you're going to learn all about variables, scopes, methods and functions, parameters/arguments, classes, loops, objects, data types and more!</p>
           <br />
-          <p>You will learn how to think like a programmer, how to code real apps and most important, you will become a programmer with solid understanding of what's going on under the hood.</p>
+          <p>You will learn how to think like a programmer, how to code real apps, and most important, you'll become a programmer with solid understanding of what's going on under the hood.</p>
           <br />
-          <p>I've been in your place, and the reality is, it's hard to learn how to code, and how to do it well.</p>
-          <p>The programming world is full of languages, tools, frameworks and libraries, and it's difficult to find where to start.</p>
+          <p>The programming world is full of languages, tools, frameworks and libraries, and believe me, it's difficult to find where and how to start.</p>
           <br />
-          <p>That's why I created this course, to teach people like you how to code from the very beginning, from A to Z. Stop fidgeting through the noise, I'll teach you everything from HTML and CSS up to how to configure servers and deployment.</p>
+          <p>That's why I created this course, to teach people like you how to code from the very beginning, from A to Z, and how to do it well.</p>
           <br />
-          <p>Are you ready to become a programmer?</p>
+          <p>Stop fidgeting through the noise, I'll teach you everything from HTML and CSS up to how to configure servers and deployment.</p>
+          <br />
+          <p>Are you ready to become a programmer? 😉</p>
         </div>
       </div>
     </div>
@@ -109,7 +111,7 @@
             <br />
             <p>Learn this programming language by building 3 useful applications, including a to-do list app ✅ to become more productive!</p>
           </div>
-          <div class="outline__notebook__card hidden" data-module="6">
+          <div class="outline__notebook__card outline__notebook__card--mobile-tablet-title-small hidden" data-module="6">
             <h3><span>6.</span> Learning Python 🐍</h3>
             <p>Python is a very powerful programming language used by companies like Disqus, Bitbucket, Quora, Instagram, Pinterest and NASA!</p>
             <br />
@@ -123,7 +125,7 @@
             <br />
             <p>In this module you'll learn how to work with Git and GitHub, pull and push changes to repositories and how to contribute to Open Source projects 🙌</p>
           </div>
-          <div class="outline__notebook__card hidden" data-module="8">
+          <div class="outline__notebook__card outline__notebook__card--mobile-tablet-title-small hidden" data-module="8">
             <h3><span>8.</span> Web Development 🕸️</h3>
             <p>In this module you'll learn how the Web works and communicates, you'll also build your first website with HTML and CSS, deploy it to different servers and get your perfect domain name.</p>
             <br />

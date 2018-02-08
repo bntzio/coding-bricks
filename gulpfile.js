@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const svgo = require('gulp-svgo')
 const sass = require('gulp-sass')
 const cleanCSS = require('gulp-clean-css')
+const autoprefixer = require('gulp-autoprefixer')
 const browserSync = require('browser-sync').create()
 
 // server
@@ -24,6 +25,11 @@ gulp.task('html', () => {
 gulp.task('scss', () => {
   return gulp.src('./src/styles/main.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false,
+      grid: true
+    }))
     .pipe(cleanCSS())
     .pipe(gulp.dest('./dist/styles/'))
     .pipe(browserSync.stream())

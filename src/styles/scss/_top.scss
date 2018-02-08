@@ -13,15 +13,17 @@
     font-size: 2.4rem;
     letter-spacing: 1.4px;
     text-shadow: 6px 6px 15px black;
-    margin-top: 7rem;
+    margin-top: 4rem;
     padding: 0 1.2rem;
     display: inline-flex;
     justify-content: center;
     flex-wrap: wrap;
     @include tablet {
+      margin-top: 5.5rem;
       font-size: 3.4rem;
     }
     @include desktop {
+      margin-top: 7rem;
       font-size: 5rem;
     }
 
@@ -142,20 +144,13 @@
         outline: none;
         z-index: 1;
         transition: .6s ease all;
-        cursor: pointer;
+        transition-duration: .3s;
+        cursor: not-allowed;
 
         @include tablet {
           font-size: 1rem;
           margin-top: 0;
           margin-left: .3rem;
-        }
-
-        &:hover {
-          transform: rotate(10deg);
-          transition-duration: .3s;
-          color: white;
-          background: $secondaryColor;
-          transition: .6s ease all;
         }
       }
     }

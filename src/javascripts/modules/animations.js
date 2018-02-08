@@ -22,21 +22,31 @@ $(document).ready(() => {
   $char.mouseleave((el) => {
     TweenMax.to(el.currentTarget, 0.3, { scale: 1, rotation: 0 })
   })
-  /* jquery */
-  $('#enroll').mouseenter(function () {
-    $(this).text('Enroll! 🎉')
-  })
-  $('#enroll').mouseleave(function () {
-    $(this).text('Enroll')
-  })
   /* scrollmagic */
-  const controller = new ScrollMagic.Controller({ addIndicators: true })
+  const controller = new ScrollMagic.Controller({ addIndicators: false })
+  let introScene
 
-  new ScrollMagic.Scene({
-    triggerElement: '.intro-scroll'
-  })
-  .setClassToggle('.top__wrapper', 'fade-out')
-  .addTo(controller)
+  const createIntroScene = () => {
+    introScene = new ScrollMagic.Scene({
+      triggerElement: '.intro-scroll'
+    })
+    .setClassToggle('.top__wrapper', 'fade-out')
+    .addTo(controller)
+  }
+  createIntroScene()
+
+  const destroyIntroScene = () => {
+    introScene.destroy()
+  }
+
+  if ($(window).width() <= 768) {
+    $('.top__form').find('form').find('input').on('focus', () => {
+      destroyIntroScene()
+    })
+    $('.top__form').find('form').find('input').on('focusout', () => {
+      createIntroScene()
+    })
+  }
 
   new ScrollMagic.Scene({
     triggerElement: '.intro-scroll'

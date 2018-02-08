@@ -12,3 +12,8 @@
 .hidden {
   display: none;
 }
+.animate-button {
+  transform: rotate(10deg);
+  color: white !important;
+  background: $secondaryColor !important;
+}
