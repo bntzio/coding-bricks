@@ -1,10 +1,15 @@
 .pricing {
+  transform: skewY(-4deg);
   position: relative;
   display: grid;
   grid-column: 1 / -1;
   background-color: $primaryColor;
   background-color: #161930;
   background-image: url('./../images/svg/texture.svg');
+
+  &__wrapper {
+    transform: skewY(4deg);
+  }
 
   &__title {
     margin-top: 2rem;

@@ -23,7 +23,7 @@ $(document).ready(() => {
     TweenMax.to(el.currentTarget, 0.3, { scale: 1, rotation: 0 })
   })
   /* scrollmagic */
-  const controller = new ScrollMagic.Controller({ addIndicators: true })
+  const controller = new ScrollMagic.Controller({ addIndicators: false })
   let introScene
 
   const createIntroScene = () => {

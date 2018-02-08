@@ -2,8 +2,11 @@
   position: relative;
   display: grid;
   grid-column: 1 / -1;
-  background-color: #fc1683;
-  background-image: url('./../images/svg/topography.svg');
+
+  &__pricing__wrapper {
+    background-color: #fc1683;
+    background-image: url('./../images/svg/topography.svg');
+  }
 
   &__title {
     margin-top: 2rem;

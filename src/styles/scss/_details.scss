@@ -1,8 +1,8 @@
 .details {
   display: grid;
   grid-column: 1 / -1;
-  background: darken($primaryColor, 7%);
   padding-bottom: 4rem;
+  background: darken($primaryColor, 7%);
 
   &__wrapper {
     opacity: 0;
