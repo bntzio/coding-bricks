@@ -23,12 +23,12 @@ $(document).ready(() => {
     TweenMax.to(el.currentTarget, 0.3, { scale: 1, rotation: 0 })
   })
   /* scrollmagic */
-  const controller = new ScrollMagic.Controller({ addIndicators: false })
+  const controller = new ScrollMagic.Controller({ addIndicators: true })
   let introScene
 
   const createIntroScene = () => {
     introScene = new ScrollMagic.Scene({
-      triggerElement: '.intro-scroll'
+      triggerElement: '.top__share'
     })
     .setClassToggle('.top__wrapper', 'fade-out')
     .addTo(controller)
@@ -49,9 +49,9 @@ $(document).ready(() => {
   }
 
   new ScrollMagic.Scene({
-    triggerElement: '.intro-scroll'
+    triggerElement: '.top__share'
   })
-  .setClassToggle('.details__wrapper', 'fade-in')
+  .setClassToggle('.details__wrapper', 'appear')
   .addTo(controller)
 
   new ScrollMagic.Scene({
@@ -61,4 +61,37 @@ $(document).ready(() => {
   })
   .setPin('.outline__wrapper', { pushFollowers: false })
   .addTo(controller)
+
+  /* jquery */
+  const socialShareAnimation = () => {
+    const $facebookBtn = $('#facebook-share')
+    const $twitterBtn = $('#twitter-share')
+    const $shareMessage = $('.top__share__message')
+
+    $facebookBtn.add($twitterBtn).on('mouseover', function (ev) {
+      $shareMessage.css('transform', 'translateY(2.5rem)')
+      $shareMessage.css('opacity', '1')
+
+      if (ev.currentTarget.id.includes('facebook')) {
+        $shareMessage.html('<span>Share</span> the Course!')
+      } else {
+        $shareMessage.html('<span>Tweet</span> the Course!')
+      }
+    })
+
+    $facebookBtn.add($twitterBtn).on('mouseleave', function () {
+      $shareMessage.css('transform', 'translateY(0.5rem)')
+      $shareMessage.css('opacity', '0')
+    })
+  }
+
+  if ($(window).width() > 768) {
+    socialShareAnimation()
+  }
+
+  $(window).resize(() => {
+    if ($(window).width() > 768) {
+      socialShareAnimation()
+    }
+  })
 })

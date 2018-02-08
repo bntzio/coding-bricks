@@ -80,6 +80,12 @@
       margin-top: 1.5rem;
       font-weight: 500;
       font-size: .8rem;
+
+      span {
+        color: $secondaryColor;
+        font-weight: 600;
+      }
+
       @include tablet {
         font-size: .9rem;
       }
@@ -153,6 +159,53 @@
           margin-left: .3rem;
         }
       }
+    }
+  }
+
+  &__share {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+
+    &__icons {
+      display: flex;
+      justify-content: center;
+      z-index: 1;
+
+      .fa-twitter {
+        transition: .6s ease all;
+        font-size: 1.4rem;
+        margin-right: .74rem;
+        &:hover {
+          cursor: pointer;
+          color: $secondaryColor;
+          transform: scale(2) rotate(360deg);
+        }
+      }
+      .fa-facebook {
+        transition: .6s ease all;
+        font-size: 1.4rem;
+        margin-left: .74rem;
+        &:hover {
+          cursor: pointer;
+          color: $secondaryColor;
+          transform: scale(2) rotateX(360deg);
+        }
+      }
+    }
+
+    &__message {
+      span {
+        color: $secondaryColor;
+        font-weight: 600;
+      }
+
+      opacity: 0;
+      transition: .6s ease all;
+      color: white;
+      font-weight: 500;
+      margin-top: -1rem;
     }
   }
 }
