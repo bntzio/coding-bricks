@@ -81,13 +81,11 @@
           transform: rotate(6deg);
           align-self: flex-start;
           margin-top: 3.6rem;
-          box-shadow: 8px 10px 0px 0px rgba(0,0,0,1);
         }
         @include desktop {
           width: 12rem;
           align-self: flex-start;
           margin-right: 7.4rem;
-          box-shadow: 10px 12px 0px 0px rgba(0,0,0,1);
         }
 
         img {
