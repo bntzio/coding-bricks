@@ -112,4 +112,15 @@ $(document).ready(() => {
       socialShareAnimation()
     }
   })
+
+  const $kidText = $('#hackerkid')
+  const $profilePhoto = $('#profile-photo')
+
+  $kidText.mouseover(() => {
+    $profilePhoto.attr('src', '/images/kid.jpg')
+  })
+  $kidText.mouseleave(() => {
+    $profilePhoto.attr('src', '/images/profile.jpg')
+  })
+
 })

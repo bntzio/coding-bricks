@@ -107,6 +107,14 @@
         line-height: 1.6rem;
         word-spacing: 1.2px;
 
+        #hackerkid {
+          color: $secondaryColor;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
         @include tablet {
           margin-left: 2.5rem;
           text-align: left;
