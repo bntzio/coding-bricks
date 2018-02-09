@@ -122,5 +122,4 @@ $(document).ready(() => {
   $kidText.mouseleave(() => {
     $profilePhoto.attr('src', '/images/profile.jpg')
   })
-
 })

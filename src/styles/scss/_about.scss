@@ -63,8 +63,6 @@
 
       &__photo {
         transition: all .4s ease-in;
-        transform: rotate(-6deg);
-        box-shadow: 6px 8px 0px 0px rgba(0,0,0,1);
         margin-top: 5rem;
         margin-bottom: 3rem;
         align-self: center;
@@ -72,8 +70,10 @@
         border: 7px solid white;
         text-align: right;
         order: 0;
+        animation: levitate-alternate 1.8s alternate ease-in-out infinite;
 
         @include tablet {
+          animation: levitate 1.8s alternate ease-in-out infinite;
           width: 11rem;
           order: 1;
           margin-right: 7rem;

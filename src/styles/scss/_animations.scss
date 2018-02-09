@@ -1,23 +1,21 @@
-@keyframes zoom-pulse {
+@keyframes levitate {
   0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.2);
-    opacity: .7;
-  }
-  70% {
-    transform: scale(1);
-    opacity: .8;
-
-  }
-  80% {
-    transform: scale(1.1);
-    opacity: .9;
+    transform: translateY(-14px) rotate(6deg);
+    box-shadow: 6px 8px 5px 0px rgba(0,0,0,1);
   }
   100% {
-    transform: scale(1);
-    opacity: 1;
+    transform: translateY(7px) rotate(6deg);
+    box-shadow: 9px 11px 10px 0px rgba(0,0,0,1);
+  }
+}
+
+@keyframes levitate-alternate {
+  0% {
+    transform: translateY(-14px) rotate(-6deg);
+    box-shadow: -6px 8px 5px 0px rgba(0,0,0,1);
+  }
+  100% {
+    transform: translateY(7px) rotate(-6deg);
+    box-shadow: -9px 11px 10px 0px rgba(0,0,0,1);
   }
 }
