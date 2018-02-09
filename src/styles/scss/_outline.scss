@@ -1,4 +1,5 @@
 .outline {
+  z-index: 1;
   position: relative;
   display: grid;
   grid-column: 1 / -1;
@@ -9,6 +10,7 @@
   }
 
   &__title {
+    transition: all .6s ease;
     margin-top: 2rem;
     font-family: 'SuperMario', 'System', 'Roboto', 'sans-serif';
     font-size: 1.3rem;
@@ -24,7 +26,8 @@
     }
   }
 
-  &__notebook {
+  &__cards {
+    transition: all .8s ease-in-out;
     position: relative;
     margin-top: 2rem;
     padding: 2rem 15%;

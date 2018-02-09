@@ -6,8 +6,23 @@
   opacity: 1 !important;
   transform: translateY(-60px);
 }
+.swipe-down {
+  transform: translateY(200px);
+  @include tablet {
+    transform: translateY(140px);
+  }
+  @include desktop {
+    transform: translateY(140px);
+  }
+}
 .appear {
   opacity: 1 !important;
+}
+.disappear {
+  opacity: 0 !important;
+}
+.top-shadow {
+  box-shadow: 0px -3px 30px 2px rgba(0,0,0,0.75);
 }
 .zoom-pulse {
   animation: zoom-pulse 1.4s;

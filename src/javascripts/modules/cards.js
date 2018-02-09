@@ -2,11 +2,11 @@ const $ = require('jquery')
 
 $(document).ready(() => {
   // Buttons
-  const $prevBtn = $('.outline__notebook__prev')
-  const $nextBtn = $('.outline__notebook__next')
+  const $prevBtn = $('.outline__cards__prev')
+  const $nextBtn = $('.outline__cards__next')
 
   // Cards
-  const $cards = $('.outline__notebook__card')
+  const $cards = $('.outline__cards__card')
 
   // jQuery Fun!! 🎉
   $nextBtn.click(() => {

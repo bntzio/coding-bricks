@@ -23,7 +23,7 @@ $(document).ready(() => {
     TweenMax.to(el.currentTarget, 0.3, { scale: 1, rotation: 0 })
   })
   /* scrollmagic */
-  const controller = new ScrollMagic.Controller({ addIndicators: false })
+  const controller = new ScrollMagic.Controller({ addIndicators: true })
   let introScene
 
   const createIntroScene = () => {
@@ -57,9 +57,27 @@ $(document).ready(() => {
   new ScrollMagic.Scene({
     triggerElement: '.outline',
     triggerHook: 0,
-    duration: '100%'
+    duration: '50%'
   })
   .setPin('.outline__wrapper', { pushFollowers: false })
+  .addTo(controller)
+
+  new ScrollMagic.Scene({
+    triggerElement: '.pricing'
+  })
+  .setClassToggle('.outline__cards', 'swipe-down')
+  .addTo(controller)
+
+  new ScrollMagic.Scene({
+    triggerElement: '.pricing'
+  })
+  .setClassToggle('.outline__title', 'disappear')
+  .addTo(controller)
+
+  new ScrollMagic.Scene({
+    triggerElement: '.pricing'
+  })
+  .setClassToggle('.pricing', 'top-shadow')
   .addTo(controller)
 
   /* jquery */

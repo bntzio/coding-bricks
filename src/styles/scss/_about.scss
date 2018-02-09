@@ -1,0 +1,28 @@
+.about {
+  z-index: 1;
+  transform: skewY(-4deg);
+  position: relative;
+  display: grid;
+  grid-column: 1 / -1;
+  background-color: $primaryColor;
+
+  &__wrapper {
+    transform: skewY(4deg);
+  }
+
+  &__title {
+    text-align: center;
+    font-family: 'SuperMario', 'System', 'Roboto', 'sans-serif';
+    font-size: 1.3rem;
+    margin: 3rem 0;
+
+    @include tablet {
+      font-size: 1.7rem;
+    }
+    @include desktop {
+      text-align: right;
+      margin: 2.5rem 2.5rem 2.5rem 0;
+      font-size: 2rem;
+    }
+  }
+}
