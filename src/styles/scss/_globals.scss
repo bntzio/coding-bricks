@@ -28,7 +28,7 @@
   animation: zoom-pulse 1.4s;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .animate-button {
   transform: rotate(10deg);
