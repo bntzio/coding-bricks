@@ -28,7 +28,7 @@
     }
 
     &__char {
-      cursor: default;
+      cursor: crosshair;
       &:hover {
         color: $secondaryColor;
       }
