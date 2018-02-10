@@ -7,6 +7,7 @@
   background-color: $primaryColor;
   background-color: #161930;
   background-image: url('./../images/svg/texture.svg');
+  z-index: 21;
 
   &__wrapper {
     transform: skewY(4deg);

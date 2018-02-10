@@ -27,6 +27,7 @@
   }
 
   &__cards {
+    display: none;
     transition: all .8s ease-in-out;
     position: relative;
     margin-top: 2rem;
@@ -37,6 +38,10 @@
     margin: 0 auto;
     margin-bottom: 13rem;
     border-radius: 4px;
+
+    @include desktop {
+      display: block;
+    }
 
     &__prev, &__next {
       position: absolute;
@@ -119,6 +124,91 @@
           font-size: 1.2rem;
           line-height: 1.8rem;
         }
+      }
+    }
+  }
+
+  &__swipeable__cards {
+    display: block;
+    background: tomato;
+    transition: all .8s ease-in-out;
+    position: relative;
+    margin-top: 2rem;
+    color: darken($primaryColor, 7%);
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30rem;
+    border-radius: 4px;
+    z-index: 1;
+
+
+    @include desktop {
+      display: none;
+    }
+
+    &__item {
+      position: absolute;
+      opacity: 1;
+      padding: 2rem 15%;
+      border-radius: 4px;
+      border-top: 1.4px solid lightgray;
+      background-color: white;
+
+      &:hover {
+        cursor: -webkit-grab;
+      }
+      &:active {
+        cursor: -webkit-grabbing;
+      }
+
+      h3 {
+        text-align: center;
+        span {
+          margin-left: -1rem;
+          font-size: .9rem;
+          color: $secondaryColor;
+          @include tablet {
+            font-size: 1.3rem;
+          }
+          @include desktop {
+            font-size: 1.6rem;
+          }
+        }
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        @include tablet {
+          font-size: 1.4rem;
+        }
+        @include desktop {
+          font-size: 2rem;
+        }
+      }
+
+      p {
+        font-size: .9rem;
+        line-height: 1.3rem;
+        @include tablet {
+          font-size: 1.1rem;
+          line-height: 1.4rem;
+        }
+        @include desktop {
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+        }
+      }
+
+      &--1 {
+        z-index: 3;
+        margin-top: 1px;
+      }
+      &--2 {
+        z-index: 2;
+        margin-top: -1px;
+      }
+      &--3 {
+        z-index: 1;
+        margin-top: -3px;
       }
     }
   }
