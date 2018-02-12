@@ -19,3 +19,15 @@
     box-shadow: -9px 11px 10px 0px rgba(0,0,0,1);
   }
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

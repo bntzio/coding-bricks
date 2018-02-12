@@ -130,7 +130,6 @@
 
   &__swipeable__cards {
     display: block;
-    background: tomato;
     transition: all .8s ease-in-out;
     position: relative;
     margin-top: 2rem;
@@ -141,14 +140,128 @@
     border-radius: 4px;
     z-index: 1;
 
-
     @include desktop {
       display: none;
     }
 
+    &__fake {
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      border-radius: 4px;
+      border-top: 1.4px solid lightgray;
+      background-color: white;
+      padding: 0 1rem;
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        transition: opacity .6s ease-in;
+        opacity: 0;
+        padding: 1rem .5rem;
+
+        #mini-avatar {
+          width: 3.8rem;
+          height: 3.8rem;
+          background-image: url('/images/profile.jpg');
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          border-radius: 50%;
+          border: 2px solid white;
+          box-shadow: 0 0 0 2px $secondaryColor;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 1rem;
+        }
+
+        &__buttons {
+          display: flex;
+          justify-content: center;
+
+          div {
+            background: white;
+            color: $secondaryColor;
+            border-radius: 50%;
+            border: 2px solid $secondaryColor;
+            width: 3.4rem;
+            height: 3.4rem;
+            font-size: .6rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            align-self: flex-end;
+
+            &:hover {
+              cursor: pointer;
+              animation: pulse;
+              animation-duration: .4s;
+              color: white;
+              background-color: $secondaryColor;
+            }
+          }
+
+          #tweet-course, #shuffle-deck, #tweet-me {
+            margin: 0 auto;
+            margin-bottom: .5rem;
+            padding: 2px;
+          }
+          #shuffle-deck {
+            margin-left: -.5rem;
+            margin-right: -.5rem;
+          }
+        }
+
+        h3 {
+          color: $secondaryColor;
+          text-align: center;
+          font-size: 1.1rem;
+          font-weight: 500;
+          margin-bottom: 1rem;
+
+          @include tablet {
+            font-size: 1.4rem;
+          }
+          @include desktop {
+            font-size: 2rem;
+          }
+        }
+
+        p {
+          font-size: .9rem;
+          line-height: 1.3rem;
+          @include tablet {
+            font-size: 1.1rem;
+            line-height: 1.4rem;
+          }
+          @include desktop {
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+          }
+        }
+      }
+
+      &--1 {
+        margin-top: -8px;
+      }
+      &--2 {
+        margin-top: -6px;
+      }
+      &--3 {
+        margin-top: -4px;
+      }
+      &--4 {
+        margin-top: -2px;
+      }
+    }
+
     &__item {
       position: absolute;
-      opacity: 1;
+      opacity: 0;
       padding: 2rem 15%;
       border-radius: 4px;
       border-top: 1.4px solid lightgray;
@@ -199,16 +312,65 @@
       }
 
       &--1 {
-        z-index: 3;
-        margin-top: 1px;
+        z-index: 20;
+        opacity: 1;
       }
       &--2 {
-        z-index: 2;
-        margin-top: -1px;
+        z-index: 19;
       }
       &--3 {
+        z-index: 18;
+      }
+      &--4 {
+        z-index: 17;
+      }
+      &--5 {
+        z-index: 16;
+      }
+      &--6 {
+        z-index: 15;
+      }
+      &--7 {
+        z-index: 14;
+      }
+      &--8 {
+        z-index: 13;
+      }
+      &--9 {
+        z-index: 12;
+      }
+      &--10 {
+        z-index: 11;
+      }
+      &--11 {
+        z-index: 10;
+      }
+      &--12 {
+        z-index: 9;
+      }
+      &--13 {
+        z-index: 8;
+      }
+      &--14 {
+        z-index: 7;
+      }
+      &--15 {
+        z-index: 6;
+      }
+      &--16 {
+        z-index: 5;
+      }
+      &--17 {
+        z-index: 4;
+      }
+      &--18 {
+        z-index: 3;
+      }
+      &--19 {
+        z-index: 2;
+      }
+      &--20 {
         z-index: 1;
-        margin-top: -3px;
       }
     }
   }

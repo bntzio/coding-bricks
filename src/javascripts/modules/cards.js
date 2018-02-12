@@ -24,28 +24,68 @@ $(document).ready(() => {
     stack.createCard(card)
   })
 
+  stack.on('dragstart', (e) => {
+    const $card = $(e.target)
+    if (!$card.hasClass('outline__swipeable__cards__item--20')) {
+      const nextCardId = parseInt(e.target.classList[1].split('--')[1]) + 1
+      const $nextCard = $(`.outline__swipeable__cards__item--${nextCardId}`)
+      const nextCardHeight = $nextCard.css('height')
+      const fixedNextCardHeight = parseInt(nextCardHeight.split(' ')[0]) + 4
+      const $last4Cards = $('.outline__swipeable__cards__fake')
+      $last4Cards.css('height', fixedNextCardHeight)
+    } else {
+      const $lastCard = $('.outline__swipeable__cards__fake--4')
+      $lastCard.css('height', $card.css('height'))
+    }
+  })
+
   stack.on('dragmove', (e) => {
     const left = e.throwDirection === Swing.Direction.LEFT
     const right = e.throwDirection === Swing.Direction.RIGHT
     const opacity = 1 - (e.throwOutConfidence - 0.4)
     const $card = $(e.target)
-
     $card.css('border-top-color', 'white')
-
-    if (left || right) {
-      $card.css('opacity', opacity.toString())
-      // console.log(`Confidence is ${e.throwOutConfidence} and Opacity is ${opacity}`)
+    if (!$card.hasClass('outline__swipeable__cards__item--20')) {
+      const nextCardId = parseInt(e.target.classList[1].split('--')[1]) + 1
+      const $nextCard = $(`.outline__swipeable__cards__item--${nextCardId}`)
+      if (left || right) {
+        $card.css('opacity', opacity.toString())
+        $nextCard.css('opacity', e.throwOutConfidence)
+      }
     }
   })
 
   stack.on('throwout', (e) => {
+    const $last4Cards = $('.outline__swipeable__cards__fake')
+    const currentCardId = parseInt(e.target.classList[1].split('--')[1])
+    if (currentCardId === 17) {
+      $last4Cards.css('height', '20px')
+      $last4Cards[0].classList.add('hidden')
+    } else if (currentCardId === 18) {
+      $last4Cards.css('height', '20px')
+      $last4Cards[1].classList.add('hidden')
+    } else if (currentCardId === 19) {
+      $last4Cards.css('height', '20px')
+      $last4Cards[2].classList.add('hidden')
+    } else if (currentCardId === 20) {
+      const $lastCardContent = $('.outline__swipeable__cards__fake__content')
+      $lastCardContent.addClass('appear')
+    }
     e.target.classList.add('hidden')
   })
 
   stack.on('throwin', (e) => {
     const $card = $(e.target)
+    const nextCardId = parseInt(e.target.classList[1].split('--')[1]) + 1
+    const $nextCard = $(`.outline__swipeable__cards__item--${nextCardId}`)
+    $nextCard.css('opacity', 0)
     $card.css('border-top-color', 'lightgray')
     $card.css('opacity', '1')
+  })
+
+  stack.on('throwinend', (e) => {
+    const $last4Cards = $('.outline__swipeable__cards__fake')
+    $last4Cards.css('height', '20px')
   })
 
   // jQuery Fun!! 🎉 (card toggling)
