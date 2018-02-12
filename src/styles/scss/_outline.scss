@@ -89,6 +89,72 @@
     }
 
     &__card {
+      &__content {
+        h3 {
+          color: $secondaryColor;
+          font-size: 1.6rem !important;
+        }
+
+        p {
+          margin: 0 10%;
+          font-size: 1.1rem !important;
+        }
+
+        #mini-avatar {
+          width: 4.8rem;
+          height: 4.8rem;
+          background-image: url('/images/profile.jpg');
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          border-radius: 50%;
+          border: 2px solid white;
+          box-shadow: 0 0 0 2px $secondaryColor;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 1rem;
+        }
+
+        &__buttons {
+          display: flex;
+          justify-content: center;
+
+          div {
+            background: white;
+            color: $secondaryColor;
+            border-radius: 50%;
+            border: 2px solid $secondaryColor;
+            width: 3.8rem;
+            height: 3.8rem;
+            font-size: .6rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            align-self: flex-end;
+
+            &:nth-child(2) {
+              margin-left: 1rem;
+              margin-right: 1rem;
+            }
+
+            &:hover {
+              cursor: pointer;
+              animation: pulse;
+              animation-duration: .4s;
+              color: white;
+              background-color: $secondaryColor;
+            }
+          }
+
+          #tweet-course, #shuffle-deck, #tweet-me {
+            margin-bottom: .5rem;
+            padding: 2px;
+          }
+        }
+      }
+
       h3 {
         text-align: center;
         span {
@@ -175,11 +241,20 @@
           display: block;
           margin: 0 auto;
           margin-bottom: 1rem;
+
+          @include tablet {
+            width: 4rem;
+            height: 4rem;
+          }
         }
 
         &__buttons {
           display: flex;
-          justify-content: center;
+          justify-content: space-evenly;
+
+          @include tablet {
+            justify-content: center;
+          }
 
           div {
             background: white;
@@ -196,6 +271,13 @@
             text-align: center;
             align-self: flex-end;
 
+            @include tablet {
+              &:nth-child(2) {
+                margin-left: 1rem;
+                margin-right: 1rem;
+              }
+            }
+
             &:hover {
               cursor: pointer;
               animation: pulse;
@@ -205,14 +287,9 @@
             }
           }
 
-          #tweet-course, #shuffle-deck, #tweet-me {
-            margin: 0 auto;
+          #mobile-tweet-course, #mobile-shuffle-deck, #mobile-tweet-me {
             margin-bottom: .5rem;
             padding: 2px;
-          }
-          #shuffle-deck {
-            margin-left: -.5rem;
-            margin-right: -.5rem;
           }
         }
 
@@ -224,18 +301,19 @@
           margin-bottom: 1rem;
 
           @include tablet {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
           }
           @include desktop {
-            font-size: 2rem;
+            font-size: 1.3rem;
           }
         }
 
         p {
+          padding: 0 20%;
           font-size: .9rem;
           line-height: 1.3rem;
           @include tablet {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.4rem;
           }
           @include desktop {

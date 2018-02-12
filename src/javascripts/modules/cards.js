@@ -68,7 +68,9 @@ $(document).ready(() => {
       $last4Cards.css('height', '20px')
       $last4Cards[2].classList.add('hidden')
     } else if (currentCardId === 20) {
+      const $lastCard = $('.outline__swipeable__cards__fake--4')
       const $lastCardContent = $('.outline__swipeable__cards__fake__content')
+      $lastCard.css('height', '25rem')
       $lastCardContent.addClass('appear')
     }
     e.target.classList.add('hidden')

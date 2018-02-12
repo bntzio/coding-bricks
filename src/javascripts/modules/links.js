@@ -53,7 +53,7 @@ $(document).ready(() => {
   })
 
   // Web Intents
-  $('#twitter-share').add($('#tweet-course')).click(() => {
+  $('#twitter-share').add($('#tweet-course')).add($('#mobile-tweet-course')).click(() => {
     const tweet = 'Check out CodingBricks.co 👨‍💻 Learn to code by building 30 apps in 10 programming languages! ✨ Learn #python #ruby #javascript #golang #webdevelopment and more! 🙌'
     const regexTweet = tweet.replace(new RegExp('#', 'g'), '%23')
     const parsedTweet = regexTweet.split(' ').join('%20')
@@ -75,7 +75,7 @@ $(document).ready(() => {
     })
   })
 
-  $('#tweet-me').click(() => {
+  $('#tweet-me').add($('#mobile-tweet-me')).click(() => {
     const tweet = 'Hey @bntzio 👋'.split(' ').join('%20')
     window.open(`https://twitter.com/intent/tweet?text=${tweet}`)
   })
