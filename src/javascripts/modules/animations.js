@@ -24,13 +24,19 @@ $(document).ready(() => {
   })
   /* scrollmagic */
   const controller = new ScrollMagic.Controller({ addIndicators: false })
-  let introScene
+  const mobileController = new ScrollMagic.Controller({ addIndicators: true })
+  const desktopController = new ScrollMagic.Controller({ addIndicators: true })
 
+  let introScene
   const createIntroScene = () => {
     introScene = new ScrollMagic.Scene({
       triggerElement: '.top__share'
     })
     .setClassToggle('.top__wrapper', 'fade-out')
+    .addIndicators({
+      name: 'topFadeOut',
+      indent: 0
+    })
     .addTo(controller)
   }
   createIntroScene()
@@ -52,32 +58,85 @@ $(document).ready(() => {
     triggerElement: '.top__share'
   })
   .setClassToggle('.details__wrapper', 'appear')
+  .addIndicators({
+    name: 'detailsFadeIn',
+    indent: 200
+  })
   .addTo(controller)
 
-  new ScrollMagic.Scene({
-    triggerElement: '.outline',
-    triggerHook: 0,
-    duration: '50%'
-  })
-  .setPin('.outline__wrapper', { pushFollowers: false })
-  .addTo(controller)
+  let mobilePinScene
+  if ($(window).width() <= (1024 - 1)) {
+    mobilePinScene = new ScrollMagic.Scene({
+      triggerElement: '.outline',
+      triggerHook: 0
+    })
+    .setPin('.outline__wrapper', { pushFollowers: false })
+    .addIndicators({
+      name: 'courseContentPin',
+      indent: 0
+    })
+    .addTo(mobileController)
+  } else {
+    new ScrollMagic.Scene({
+      triggerElement: '.outline',
+      triggerHook: 0,
+      duration: '50%'
+    })
+    .setPin('.outline__wrapper', { pushFollowers: false })
+    .addIndicators({
+      name: 'courseContentPin',
+      indent: 0
+    })
+    .addTo(desktopController)
 
-  new ScrollMagic.Scene({
-    triggerElement: '.pricing'
+    new ScrollMagic.Scene({
+      triggerElement: '.pricing'
+    })
+    .setClassToggle('.outline__cards', 'swipe-down')
+    .addIndicators({
+      name: 'courseContentSwipeDown',
+      indent: 600
+    })
+    .addTo(desktopController)
+  }
+
+  $(window).resize(() => {
+    if ($(window).width() <= (1024 - 1)) {
+      desktopController.destroy(true)
+
+      if (!mobilePinScene) {
+        mobilePinScene = new ScrollMagic.Scene({
+          triggerElement: '.outline',
+          triggerHook: 0
+        })
+        .setPin('.outline__wrapper', { pushFollowers: false })
+        .addIndicators({
+          name: 'courseContentPin',
+          indent: 0
+        })
+        .addTo(mobileController)
+      }
+    }
   })
-  .setClassToggle('.outline__cards', 'swipe-down')
-  .addTo(controller)
 
   new ScrollMagic.Scene({
     triggerElement: '.pricing'
   })
   .setClassToggle('.outline__title', 'disappear')
+  .addIndicators({
+    name: 'hideCourseContentTitle',
+    indent: 300
+  })
   .addTo(controller)
 
   new ScrollMagic.Scene({
     triggerElement: '.pricing'
   })
   .setClassToggle('.pricing', 'top-shadow')
+  .addIndicators({
+    name: 'addCourseContentShadow',
+    indent: 0
+  })
   .addTo(controller)
 
   /* jquery */
