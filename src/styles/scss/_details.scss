@@ -46,6 +46,12 @@
     p {
       line-height: 1.3rem;
       font-size: .94rem;
+      margin-bottom: .34rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
       @include tablet {
         line-height: 1.8rem;
         font-size: 1.1rem;
