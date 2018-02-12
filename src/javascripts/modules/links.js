@@ -1,4 +1,5 @@
 const $ = require('jquery')
+const Clipboard = require('clipboard')
 
 $(document).ready(() => {
   const $facebook = $('#facebook-icon')
@@ -49,5 +50,33 @@ $(document).ready(() => {
     } else {
       navigate('medium')
     }
+  })
+
+  // Web Intents
+  $('#twitter-share').add($('#tweet-course')).click(() => {
+    const tweet = 'Check out CodingBricks.co 👨‍💻 Learn to code by building 30 apps in 10 programming languages! ✨ Learn #python #ruby #javascript #golang #webdevelopment and more! 🙌'
+    const regexTweet = tweet.replace(new RegExp('#', 'g'), '%23')
+    const parsedTweet = regexTweet.split(' ').join('%20')
+
+    window.open(`https://twitter.com/intent/tweet?text=${parsedTweet}`)
+  })
+
+  $('#facebook-share').click(() => {
+    const clipboard = new Clipboard('#facebook-share')
+    const $text = $('.top__share__message')
+    $text.html('<span>Copied</span> text to clipboard! ✂️')
+
+    clipboard.on('success', (e) => {
+      setTimeout(() => {
+        const appId = '306122403245289'
+        const link = 'https://codingbricks.co'
+        window.location = `https://www.facebook.com/dialog/share?app_id=${appId}&display=popup&href=${link}&redirect_uri=${link}`
+      }, 2000)
+    })
+  })
+
+  $('#tweet-me').click(() => {
+    const tweet = 'Hey @bntzio 👋'.split(' ').join('%20')
+    window.open(`https://twitter.com/intent/tweet?text=${tweet}`)
   })
 })
