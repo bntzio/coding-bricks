@@ -2,7 +2,7 @@ const $ = require('jquery')
 
 $(document).ready(() => {
   const $input = $('.top__form').find('form').find('input')
-  const $button = $('.top__form').find('form').find('button')
+  const $button = $('#enroll')
 
   $input.on('keyup', function () {
     if ($(this).val().length > 0) {
@@ -10,16 +10,16 @@ $(document).ready(() => {
       $button.css('cursor', 'pointer')
       if ($(window).width() <= 768) {
         $button.addClass('animate-button')
-        $button.text('Enroll! 🎉')
+        $button.val('Enroll! 🎉')
       } else {
         if ($button.is(':hover')) {
           $button.addClass('animate-button')
-          $button.text('Enroll! 🎉')
+          $button.val('Enroll! 🎉')
         }
       }
     } else {
       $button.removeClass('animate-button')
-      $button.text('Enroll')
+      $button.val('Enroll')
       $button.css('cursor', 'not-allowed')
       $button.prop('disabled', true)
     }
@@ -28,11 +28,11 @@ $(document).ready(() => {
   if ($(window).width() > 768) {
     $button.on('mouseover', function () {
       $(this).addClass('animate-button')
-      $button.text('Enroll! 🎉')
+      $button.val('Enroll! 🎉')
     })
     $button.on('mouseleave', function () {
       $(this).removeClass('animate-button')
-      $button.text('Enroll')
+      $button.val('Enroll')
     })
   }
 })
